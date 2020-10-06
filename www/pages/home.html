@@ -1,0 +1,30 @@
+<template>
+	<div class="page" data-name="home">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="left">
+					<a href="#" class="link icon-only panel-open" data-panel="left">
+		                <i class="f7-icons md-only">menu</i>
+		                <span class="ios-only">Menu</span>
+		              </a>
+				</div>
+				<div class="title">Absensi Karyawan PUA</div>
+			</div>
+		</div>
+
+		<div class="page-content">
+			<div class="block" >
+				<div style="text-align: center;">Silahkan Tekan untuk Check-In / Check-Out</div>
+			</div>
+
+			<div class="block">
+				<div id="div_checkin" style="background: lime; text-align: center; width: 60vw; height: 60vw; border: solid black 10px; border-radius: 50%; margin: auto;" onclick="ambilFoto();">
+					<div style="position: relative; top: 50%; transform: translateY(-50%); font-size: 4em;">Check-In</div>
+				</div>
+				<div id="div_checkout" style="display: none; background: red; text-align: center; width: 60vw; height: 60vw; border: solid black 10px; border-radius: 50%; margin: auto;" onclick="checkOut();">
+					<div style="position: relative; top: 50%; transform: translateY(-50%); font-size: 4em;">Check-Out</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
