@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.medianusamandiri.absensipua" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Absensi PUA</name>
+    <name>AbsensiPUA</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -17,32 +17,21 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <preference name="android-minSdkVersion" value="21" />
-        <preference name="android-targetSdkVersion" value="28" />
-        <icon density="mdpi" src="res/icon/android/mipmap-mdpi/ic_launcher.png" />
-        <icon density="hdpi" src="res/icon/android/mipmap-hdpi/ic_launcher.png" />
-        <icon density="xhdpi" src="res/icon/android/mipmap-xhdpi/ic_launcher.png" />
-        <icon density="xxhdpi" src="res/icon/android/mipmap-xxhdpi/ic_launcher.png" />
-        <icon density="xxxhdpi" src="res/icon/android/mipmap-xxxhdpi/ic_launcher.png" />
-        <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
-            <application android:allowBackup="false" />
-            <application android:fullBackupContent="false" />
-            <application android:usesCleartextTraffic="true" />
-        </edit-config>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+        <!-- <preference name="deployment-target" value="10.0" /> -->
+        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
             <string>need camera access to take pictures</string>
         </edit-config>
-        <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+        <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
             <string>need photo library access to get pictures from there</string>
         </edit-config>
-        <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+        <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
             <string>need location access to find things nearby</string>
         </edit-config>
-        <edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge">
+        <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryAddUsageDescription">
             <string>need photo library access to save pictures there</string>
         </edit-config>
     </platform>
@@ -50,6 +39,5 @@
     <plugin name="cordova-plugin-app-version" spec="~0.1.9" />
     <plugin name="cordova-plugin-geolocation" spec="~4.0.2" />
     <plugin name="cordova-plugin-camera" spec="~4.1.0" />
-    <plugin name="cordova-plugin-mock-location-checker" spec="~1.0.1" />
     <plugin name="cordova-plugin-screen-orientation" spec="~3.0.2" />
 </widget>
