@@ -7,8 +7,8 @@
 
 
 // GLOBAL VARIABLES
-// var site = 'http://mcollection.cloudmnm.com';
-var site = 'http://pua-test.cloudmnm.com';
+var site = 'https://pua.cloudmnm.com';
+// var site = 'http://pua-test.cloudmnm.com';
 var hari = ['MINGGU', 'SENIN', 'SELASA', 'RABU', 'KAMIS', 'JUMAT', 'SABTU'];
 var bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUSTUS', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DESEMBER'];
 var appVer = 0;
@@ -39,10 +39,13 @@ document.addEventListener('deviceready', function() {
     lat = position.coords.latitude;
     acc = position.coords.accuracy;
   }, function(){
-    console.log("gagal mengambil koordinat posisi");
+    alert("Gagal mengambil koordinat posisi! Mohon cek status GPS anda.");
+    navigator.app.exitApp();
+    // console.log("gagal mengambil koordinat posisi");
   }, {
     enableHighAccuracy: true,
-    maximumAge: 5 * 60 * 1000
+    maximumAge: 5 * 60 * 1000,
+    timeout: 5 * 1000
   });
 });
 
@@ -67,4 +70,16 @@ function lpad(str, len, padstr){
   }
 
   return (pad + str).slice(len*-1);
+}
+
+function errorMessage(e){
+  switch(e){
+    case 1:
+      alert('Anda sudah Check-out untuk hari ini!');
+    break;
+
+    case 2:
+      alert('Anda sudah Izin untuk hari ini!');
+    break;
+  }
 }

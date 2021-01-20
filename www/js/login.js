@@ -51,6 +51,7 @@ function checkIn(result){
                 // alert('Sukses!');
                 $('#div_checkin').css('display', 'none');
                 $('#div_checkout').css('display', '');
+                $('#div_ijin').css('display', 'none');
             } else {
                 app.dialog.alert("Gagal", "Perhatian");
             }
@@ -79,4 +80,35 @@ function checkOut(){
             }
         }
     })
+}
+
+function ijin(){
+    if($('#ket_ijin').css('display') == 'none'){
+        $('#ket_ijin').css('display', '');
+    } else {
+        $('#ket_ijin').css('display', 'none');
+    }
+}
+
+function simpanIjin(){
+    var form_data = app.form.convertToData('#form_ijin');
+    form_data.id_pegawai = data_user.id_pegawai;
+    form_data.latitude = lat;
+    form_data.longitude = long;
+
+    $.ajax({
+        url: site+'/API/ijin/',
+        data: JSON.stringify(form_data),
+        method: 'POST',
+        success: function(result){
+            if(result.ST_CODE == '1'){
+                alert('Sukses!');
+                onLogout();
+            } else {
+                alert('Gagal!');
+            }
+        }
+    })
+    
+    console.log(form_data);
 }

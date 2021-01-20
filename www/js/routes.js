@@ -18,10 +18,40 @@ var routes =
     history: false,
     on: {
       pageAfterIn: function(){
-        if(data_user.absen != '0'){
-          $('#div_checkin').css('display', 'none');
-          $('#div_checkout').css('display', '');
+        switch(data_user.jenis_absen){
+          case '1':
+            $('#div_checkin').css('display', 'none');
+            $('#div_checkout').css('display', '');
+            $('#div_ijin').css('display', 'none');
+          break;
+
+          case '2':
+            $('#div_checkin').css('display', 'none');
+            $('#div_checkout').css('display', 'none');
+            $('#div_unavailable1').css('display', '');
+            $('#div_ijin').css('display', 'none');
+          break;
+
+          case '3':
+          case '4':
+          case '5':
+            $('#div_checkin').css('display', 'none');
+            $('#div_checkout').css('display', 'none');
+            $('#div_unavailable2').css('display', '');
+            $('#div_ijin').css('display', 'none');
+          break;
         }
+        // if(data_user.absen != '0'){
+        //   $('#div_checkin').css('display', 'none');
+        //   $('#div_checkout').css('display', '');
+        // }
+
+        var dt = new Date();
+        var curdt = dt.getFullYear() + '-' + ('00'+(dt.getMonth()+1)).slice(-2) + '-' + ('00'+dt.getDate()).slice(-2);
+        console.log(curdt);
+
+        $('#tgl').attr('min', curdt);
+        $('#tglsd').attr('min', curdt);
       }
     }
   },

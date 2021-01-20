@@ -27,7 +27,8 @@ function ambilFoto(){
             alert('Fake GPS terdeteksi! Silahkan matikan terlebih dahulu');
         }
     }, function(error){
-        alert('error anti-mock: '+error)
+        alert('error anti-mock: '+error);
+        app.preloader.hide();
     });
 }
 
