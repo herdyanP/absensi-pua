@@ -1,0 +1,114 @@
+<template>
+	<div class="page" data-name="home">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="left">
+					<a href="#" class="link icon-only panel-open" data-panel="left">
+		                <i class="f7-icons md-only">menu</i>
+		                <span class="ios-only">Menu</span>
+		              </a>
+				</div>
+				<div class="title">Absensi Karyawan PUA</div>
+			</div>
+		</div>
+
+		<div class="page-content">
+			<div class="block" >
+				<div style="text-align: center;" id="welcomeGreeting"></div>
+			</div>
+			
+			
+			<div class="block" id="blockFormShift">
+				<form class="list no-hairlines no-hairlines-between" id="form_shift">
+					<ul>
+						<li class="item-content item-input">
+							<div class="item-inner">
+								<div class="item-title item-label">Shift</div>
+								<div class="item-input-wrap input-dropdown-wrap">
+									<select name="shift_id" id="shift_id" onchange="checkLogged(this.value)"></select>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</form>
+			</div>
+			
+
+			<div class="block">
+				<div id="div_checkin" style="display: none; background: lime; text-align: center; width: 60vw; height: 60vw; border: solid black 10px; border-radius: 50%; margin: auto;" onclick="ambilFoto();">
+					<div style="position: relative; top: 50%; transform: translateY(-50%); font-size: 4em;">Check-In</div>
+				</div>
+				<div id="div_checkout" style="display: none; background: red; text-align: center; width: 60vw; height: 60vw; border: solid black 10px; border-radius: 50%; margin: auto;" onclick="checkOut();">
+					<div style="position: relative; top: 50%; transform: translateY(-50%); font-size: 4em;">Check-Out</div>
+				</div>
+				<div id="div_unavailable1" style="display: none; background: lightgray; text-align: center; width: 60vw; height: 60vw; border: solid black 10px; border-radius: 50%; margin: auto;" onclick="errorMessage(1);">
+					<div style="position: relative; top: 50%; transform: translateY(-50%); font-size: 4em;">Check-In</div>
+				</div>
+				<div id="div_unavailable2" style="display: none; background: lightgray; text-align: center; width: 60vw; height: 60vw; border: solid black 10px; border-radius: 50%; margin: auto;" onclick="errorMessage(2);">
+					<div style="position: relative; top: 50%; transform: translateY(-50%); font-size: 4em;">Check-In</div>
+				</div>
+				<div id="div_unavailable3" style="display: none; background: lightgray; text-align: center; width: 60vw; height: 60vw; border: solid black 10px; border-radius: 50%; margin: auto;" onclick="errorMessage(3);">
+					<div style="position: relative; top: 50%; transform: translateY(-50%); font-size: 4em;">Check-In</div>
+				</div>
+
+			</div>
+
+			<div class="block">
+				<div id="div_ijin" style="background: yellow; text-align: center; width: 20vw; height: 20vw; border: solid black 5px; border-radius: 50%; margin: auto;" onclick="ijin();">
+					<div style="position: relative; top: 50%; transform: translateY(-50%); font-size: 2em;">Izin</div>
+				</div>
+			</div>
+
+			<div id="ket_ijin" style="display: none;">
+				<div class="block-title">Keterangan Izin</div>
+				<div class="block">
+					<form class="list no-hairlines no-hairlines-between" id="form_ijin">
+						<ul>
+							<li class="item-content item-input">
+								<div class="item-inner">
+									<div class="item-title item-label">Alasan</div>
+									<div class="item-input-wrap input-dropdown-wrap">
+										<select name="jenis" id="jenis">
+											<option value="3">Sakit</option>
+											<option value="4">Cuti</option>
+											<option value="5">Dinas</option>
+										</select>
+									</div>
+								</div>
+							</li>
+	
+							<div class="row">
+								<div class="col-50">
+									<li class="item-content item-input">
+										<div class="item-inner">
+											<div class="item-title item-label">Sejak</div>
+											<div class="item-input-wrap">
+												<input type="date" id="tgl" name="tgl">
+											</div>
+										</div>
+									</li>
+								</div>
+	
+								<div class="col-50">
+									<li class="item-content item-input">
+										<div class="item-inner">
+											<div class="item-title item-label">Hingga</div>
+											<div class="item-input-wrap">
+												<input type="date" id="tglsd" name="tglsd">
+												<!-- <input type="text" id="tglsd" name="tglsd" placeholder="Masukkan tanggal..."> -->
+											</div>
+										</div>
+									</li>
+								</div>
+							</div>
+	
+							<li>
+								<a class="button button-fill" style="width: 100%;" onclick="simpanIjin();">Simpan</a>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

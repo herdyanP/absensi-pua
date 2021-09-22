@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <!-- <meta name="theme-color" content="#2196f3"> -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  <!-- <link rel="stylesheet" href="css/framework7.css"> -->
+  <link rel="stylesheet" href="css/framework7.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+  <div id="app">
+
+    <div class="panel panel-left panel-cover">
+      <div class="block" style="background: #2196f3; color: white; margin: 0; padding: 20px; font-size: 20px">
+        <br><strong>Aplikasi Mobile</strong>
+        <br><strong>Absensi Karyawan PUA</strong>
+        <!-- <br><strong>(DEV) Absensi Karyawan PUA</strong> -->
+      </div>
+
+      <div class="list no-hairlines no-hairlines-between no-chevron" style="margin: 0;">
+        <ul>
+          <!-- <li class="divider" style="margin-top: 0;"><strong>Akun</strong></li> -->
+            <a onclick="onLogout(0);" class="item-link item-content panel-close">
+              <div class="item-media">
+                <i class="f7-icons">person_round</i>
+              </div>
+              <div class="item-inner">
+                <div class="item-title">Logout</div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="view view-main view-init ios-edges">
+      <div class="page" data-name="login">
+        <div class="page-content login-screen-content" style="background: #FCFAFB;">
+          <div class="login-screen-title" style="font-size: 28px">Absensi Karyawan PUA
+            <!-- <div class="login-screen-title" style="font-size: 28px">(DEV) Absensi Karyawan PUA -->
+            <div style="margin-top: 20px;"><img src="img/logopua.jpg" style="width: 80vw;"></div>
+          </div>
+
+          <form id="login_cred" autocomplete="off">
+            <div class="list no-hairlines no-hairlines-between">
+              <ul>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Username</div>
+                    <div class="item-input-wrap">
+                      <input type="text" id="userlogin" name="user" value="" validate pattern="[A-Za-z0-9_ ]*" data-error-message="Karakter yang diperbolehkan: abjad, angka, spasi, underscore">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-title item-label">Password</div>
+                    <div class="item-input-wrap">
+                      <input type="password" id="passlogin" name="pass" value="">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title" style="width: 100%;">
+                      <a id="login_button" class="button button-outline button-round" href="#" onclick="newLogin()">Sign In</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="block-footer">
+              <!-- <p><a href="/lupapass/">Lupa Password</a></p> -->
+              <p>&copy; 2020-2021 PT Media Nusa Mandiri</p>
+              <p id="appversion"></p>
+              <!-- <p><a href="" id="download">Download</a></p> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/framework7.min.js"></script>
+  <!-- <script src="js/highcharts.js"></script> -->
+
+  <script src="js/routes.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/absen.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/camera.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+
+</body>
+</html>
