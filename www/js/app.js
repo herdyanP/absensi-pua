@@ -7,19 +7,19 @@
 
 
 // GLOBAL VARIABLES
-var site = 'https://syspua.cloudmnm.com';
-// var site = 'https://pua.cloudmnm.com/pua-test';
+var site = 'https://pua.cloudmnm.com';
 
 var hari = ['MINGGU', 'SENIN', 'SELASA', 'RABU', 'KAMIS', 'JUMAT', 'SABTU'];
 var bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUSTUS', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DESEMBER'];
 var appVer = 0;
-var data_user;
-var long = '', lat = '', acc = '';
 var app = new Framework7({
   id: 'com.medianusamandiri.absensipua',
   root: '#app',
   init: false,
   routes: routes,
+  touch: {
+    disableContextMenu: false,
+  },
 });
 
 
@@ -35,19 +35,19 @@ document.addEventListener('deviceready', function () {
 
   screen.orientation.lock('portrait');
 
-  navigator.geolocation.watchPosition(function (position) {
-    long = position.coords.longitude;
-    lat = position.coords.latitude;
-    acc = position.coords.accuracy;
-  }, function () {
-    alert("Gagal mengambil koordinat posisi! Mohon cek status GPS anda.");
-    navigator.app.exitApp();
-    // console.log("gagal mengambil koordinat posisi");
-  }, {
-    enableHighAccuracy: true,
-    maximumAge: 5 * 60 * 1000,
-    timeout: 5 * 1000
-  });
+  // navigator.geolocation.watchPosition(function (position) {
+  //   long = position.coords.longitude;
+  //   lat = position.coords.latitude;
+  //   acc = position.coords.accuracy;
+  // }, function () {
+  //   alert("Gagal mengambil koordinat posisi! Mohon cek status GPS anda.");
+  //   navigator.app.exitApp();
+  //   // console.log("gagal mengambil koordinat posisi");
+  // }, {
+  //   enableHighAccuracy: true,
+  //   maximumAge: 5 * 60 * 1000,
+  //   timeout: 5 * 1000
+  // });
 });
 
 // UTILITY FUNCTIONS
@@ -92,4 +92,9 @@ function errorMessage(e) {
 function generateLongTgl(dateObj) {
   const hasil = hari[dateObj.getDay()] + ', ' + ('00' + dateObj.getDate()).slice(-2) + ' ' + bulan[dateObj.getMonth()] + ' ' + dateObj.getFullYear()
   return hasil
+}
+
+function alert(msg) {
+  // alert bawaan Framework7
+  app.dialog.alert(msg, 'Perhatian');
 }

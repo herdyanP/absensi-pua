@@ -18,7 +18,7 @@ var routes =
     history: false,
     on: {
       pageAfterIn: function(){
-        getShiftData();
+        // getShiftData();
         absenInit();
       }
     }

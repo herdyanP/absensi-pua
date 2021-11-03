@@ -110,8 +110,8 @@ function checkIn(result) {
     }
 
     $.ajax({
-        url: site + '/API/checkin/',
-        // data: JSON.stringify(temp),
+        // url: site + '/API/checkin/',
+        url: site + '/API/index.php?do=checkin',
         data: temp,
         method: 'POST',
         success: function (result) {
@@ -129,7 +129,8 @@ function checkIn(result) {
                 $('#div_checkout').css('display', '');
                 $('#div_ijin').css('display', 'none');
             } else {
-                app.dialog.alert("Gagal", "Perhatian");
+                alert(result.MSG);
+                // app.dialog.alert("Gagal", "Perhatian");
             }
         }
     })
@@ -141,12 +142,12 @@ function checkOut() {
         'latitude': lat,
         'longitude': long,
         'id_pegawai': data_user.id_pegawai,
-        'shift': data_user.shift_id,
+        // 'shift': data_user.shift_id,
     }
 
     $.ajax({
-        url: site + '/API/checkout/',
-        // data: JSON.stringify(temp),
+        // url: site + '/API/checkout/',
+        url: site + '/API/index.php?do=checkout',
         data: temp,
         method: 'POST',
         success: function (result) {
@@ -177,7 +178,8 @@ function simpanIjin() {
     form_data.longitude = long;
 
     $.ajax({
-        url: site + '/API/ijin/',
+        // url: site + '/API/ijin/',
+        url: site + '/API/index.php?do=ijin',
         data: form_data,
         method: 'POST',
     }).done(function (result) {
