@@ -26,6 +26,7 @@ function newLogin() {
             error: function(){
                 console.log("AJAX Error");
                 alert("Unknown Error");
+                navigator.geolocation.clearWatch(watchID);
             },
             complete: function(){
                 console.log("AJAX Complete");

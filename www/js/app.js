@@ -7,7 +7,9 @@
 
 
 // GLOBAL VARIABLES
-var site = 'https://pua.cloudmnm.com';
+// var site = 'https://pua.cloudmnm.com';
+// var site = 'https://puabackup.cloudmnm.com/';
+var site = 'https://pua.greenjournal.id/';
 
 var hari = ['MINGGU', 'SENIN', 'SELASA', 'RABU', 'KAMIS', 'JUMAT', 'SABTU'];
 var bulan = ['JANUARI', 'FEBRUARI', 'MARET', 'APRIL', 'MEI', 'JUNI', 'JULI', 'AGUSTUS', 'SEPTEMBER', 'OKTOBER', 'NOVEMBER', 'DESEMBER'];

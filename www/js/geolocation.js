@@ -18,11 +18,17 @@ let watchID = undefined;
 // }
 
 function doWatchGeolocation() {
-    watchID = navigator.geolocation.watchPosition(watchGeoSuccess, watchGeoFailed, {
+    navigator.geolocation.getCurrentPosition(watchGeoSuccess, watchGeoFailed, {
         enableHighAccuracy: true,
         maximumAge: 5 * 60 * 1000,
         timeout: 5 * 1000
     });
+
+    // watchID = navigator.geolocation.watchPosition(watchGeoSuccess, watchGeoFailed, {
+    //     enableHighAccuracy: true,
+    //     maximumAge: 5 * 60 * 1000,
+    //     timeout: 5 * 1000
+    // });
 }
 
 function watchGeoSuccess(position) {

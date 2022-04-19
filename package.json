@@ -10,8 +10,6 @@
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
     "dependencies": {
-        "cordova-plugin-app-version": "^0.1.9",
-        "cordova-plugin-camera": "^4.1.0",
         "cordova-plugin-geolocation": "^4.0.2",
         "cordova-plugin-mock-location-checker": "git+https://github.com/diegorribeiro/cordova-plugin-mock-location-checker.git",
         "cordova-plugin-screen-orientation": "^3.0.2",
@@ -21,15 +19,13 @@
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {},
-            "cordova-plugin-app-version": {},
             "cordova-plugin-geolocation": {},
-            "cordova-plugin-camera": {
-                "ANDROID_SUPPORT_V4_VERSION": "27.+"
-            },
             "cordova-plugin-mock-location-checker": {},
             "cordova-plugin-screen-orientation": {},
-            "cordova-android-support-gradle-release": {
-                "ANDROID_SUPPORT_VERSION": "27.+"
+            "cordova-android-support-gradle-release": {},
+            "cordova-plugin-app-version": {},
+            "cordova-plugin-camera": {
+                "ANDROID_SUPPORT_V4_VERSION": "27.+"
             }
         },
         "platforms": [
@@ -37,6 +33,7 @@
         ]
     },
     "devDependencies": {
-        "cordova-android": "^9.1.0"
+        "cordova-android": "^9.1.0",
+        "cordova-plugin-camera": "^4.1.0"
     }
 }

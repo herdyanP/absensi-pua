@@ -1,5 +1,6 @@
 // ========== CAMERA PLUGIN ==========
-function ambilFoto(){
+function ambilFoto() {
+    console.log('ambil foto');
     app.preloader.show();
     window.plugins.mocklocationchecker.check(function(mockresult){
         app.preloader.hide();
